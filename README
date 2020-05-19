@@ -1,0 +1,21 @@
+Reference: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.1&tabs=visual-studio-mac
+
+## Run Application
+dotnet run
+
+
+## Insert record into the InMemory database
+curl --location --request POST 'https://localhost:5001/api/TodoItems' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"name": "walk dog",
+	"isComplete":true
+}'
+
+## Fetch Record verify persistence
+curl --location --request GET 'https://localhost:5001/api/TodoItems/1' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"name": "walk dog",
+	"isComplete":true
+}'
